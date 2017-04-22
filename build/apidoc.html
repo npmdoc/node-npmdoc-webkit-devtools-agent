@@ -1,0 +1,1377 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="http://github.com/c4milo/node-webkit-agent"
+
+    >webkit-devtools-agent (v0.3.1)</a>
+</h1>
+<h4>Webkit devtools agent that leverages remote debugging and profiling of nodejs applications using the built-in webkit inspector.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.webkit-devtools-agent">module webkit-devtools-agent</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webkit-devtools-agent.console">
+            function <span class="apidocSignatureSpan">webkit-devtools-agent.</span>console
+            <span class="apidocSignatureSpan">(notify, runtimeAgent)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webkit-devtools-agent.debugger_client">
+            function <span class="apidocSignatureSpan">webkit-devtools-agent.</span>debugger_client
+            <span class="apidocSignatureSpan">(notify)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webkit-devtools-agent.inspector">
+            function <span class="apidocSignatureSpan">webkit-devtools-agent.</span>inspector
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webkit-devtools-agent.page">
+            function <span class="apidocSignatureSpan">webkit-devtools-agent.</span>page
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">webkit-devtools-agent.</span>console.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">webkit-devtools-agent.</span>debugger_client.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">webkit-devtools-agent.</span>inspector.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">webkit-devtools-agent.</span>page.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">webkit-devtools-agent.</span>translator</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.webkit-devtools-agent.console">module webkit-devtools-agent.console</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webkit-devtools-agent.console.console">
+            function <span class="apidocSignatureSpan">webkit-devtools-agent.</span>console
+            <span class="apidocSignatureSpan">(notify, runtimeAgent)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.webkit-devtools-agent.console.prototype">module webkit-devtools-agent.console.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webkit-devtools-agent.console.prototype.addInspectedHeapObject">
+            function <span class="apidocSignatureSpan">webkit-devtools-agent.console.prototype.</span>addInspectedHeapObject
+            <span class="apidocSignatureSpan">(params, sendResult)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webkit-devtools-agent.console.prototype.clearMessages">
+            function <span class="apidocSignatureSpan">webkit-devtools-agent.console.prototype.</span>clearMessages
+            <span class="apidocSignatureSpan">(params, sendResult)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webkit-devtools-agent.console.prototype.disable">
+            function <span class="apidocSignatureSpan">webkit-devtools-agent.console.prototype.</span>disable
+            <span class="apidocSignatureSpan">(params, sendResult)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webkit-devtools-agent.console.prototype.enable">
+            function <span class="apidocSignatureSpan">webkit-devtools-agent.console.prototype.</span>enable
+            <span class="apidocSignatureSpan">(params, sendResult)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webkit-devtools-agent.console.prototype.setMonitoringXHREnabled">
+            function <span class="apidocSignatureSpan">webkit-devtools-agent.console.prototype.</span>setMonitoringXHREnabled
+            <span class="apidocSignatureSpan">(params, sendResult)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.webkit-devtools-agent.debugger_client">module webkit-devtools-agent.debugger_client</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webkit-devtools-agent.debugger_client.debugger_client">
+            function <span class="apidocSignatureSpan">webkit-devtools-agent.</span>debugger_client
+            <span class="apidocSignatureSpan">(notify)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.webkit-devtools-agent.debugger_client.prototype">module webkit-devtools-agent.debugger_client.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webkit-devtools-agent.debugger_client.prototype.connect">
+            function <span class="apidocSignatureSpan">webkit-devtools-agent.debugger_client.prototype.</span>connect
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webkit-devtools-agent.debugger_client.prototype.disconnect">
+            function <span class="apidocSignatureSpan">webkit-devtools-agent.debugger_client.prototype.</span>disconnect
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webkit-devtools-agent.debugger_client.prototype.flushQueue">
+            function <span class="apidocSignatureSpan">webkit-devtools-agent.debugger_client.prototype.</span>flushQueue
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webkit-devtools-agent.debugger_client.prototype.getScripts">
+            function <span class="apidocSignatureSpan">webkit-devtools-agent.debugger_client.prototype.</span>getScripts
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webkit-devtools-agent.debugger_client.prototype.onClose">
+            function <span class="apidocSignatureSpan">webkit-devtools-agent.debugger_client.prototype.</span>onClose
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webkit-devtools-agent.debugger_client.prototype.onConnect">
+            function <span class="apidocSignatureSpan">webkit-devtools-agent.debugger_client.prototype.</span>onConnect
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webkit-devtools-agent.debugger_client.prototype.onData">
+            function <span class="apidocSignatureSpan">webkit-devtools-agent.debugger_client.prototype.</span>onData
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webkit-devtools-agent.debugger_client.prototype.onError">
+            function <span class="apidocSignatureSpan">webkit-devtools-agent.debugger_client.prototype.</span>onError
+            <span class="apidocSignatureSpan">(error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webkit-devtools-agent.debugger_client.prototype.onV8Response">
+            function <span class="apidocSignatureSpan">webkit-devtools-agent.debugger_client.prototype.</span>onV8Response
+            <span class="apidocSignatureSpan">(response)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webkit-devtools-agent.debugger_client.prototype.send">
+            function <span class="apidocSignatureSpan">webkit-devtools-agent.debugger_client.prototype.</span>send
+            <span class="apidocSignatureSpan">(data, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webkit-devtools-agent.debugger_client.prototype.setExceptionBreak">
+            function <span class="apidocSignatureSpan">webkit-devtools-agent.debugger_client.prototype.</span>setExceptionBreak
+            <span class="apidocSignatureSpan">(exceptionBreak, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.webkit-devtools-agent.inspector">module webkit-devtools-agent.inspector</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webkit-devtools-agent.inspector.inspector">
+            function <span class="apidocSignatureSpan">webkit-devtools-agent.</span>inspector
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.webkit-devtools-agent.inspector.prototype">module webkit-devtools-agent.inspector.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webkit-devtools-agent.inspector.prototype.enable">
+            function <span class="apidocSignatureSpan">webkit-devtools-agent.inspector.prototype.</span>enable
+            <span class="apidocSignatureSpan">(params, sendResult)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.webkit-devtools-agent.page">module webkit-devtools-agent.page</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webkit-devtools-agent.page.page">
+            function <span class="apidocSignatureSpan">webkit-devtools-agent.</span>page
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.webkit-devtools-agent.page.prototype">module webkit-devtools-agent.page.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webkit-devtools-agent.page.prototype.canContinuouslyPaint">
+            function <span class="apidocSignatureSpan">webkit-devtools-agent.page.prototype.</span>canContinuouslyPaint
+            <span class="apidocSignatureSpan">(params, sendResult)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webkit-devtools-agent.page.prototype.canOverrideDeviceMetrics">
+            function <span class="apidocSignatureSpan">webkit-devtools-agent.page.prototype.</span>canOverrideDeviceMetrics
+            <span class="apidocSignatureSpan">(params, sendResult)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webkit-devtools-agent.page.prototype.canOverrideDeviceOrientation">
+            function <span class="apidocSignatureSpan">webkit-devtools-agent.page.prototype.</span>canOverrideDeviceOrientation
+            <span class="apidocSignatureSpan">(params, sendResult)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webkit-devtools-agent.page.prototype.canOverrideGeolocation">
+            function <span class="apidocSignatureSpan">webkit-devtools-agent.page.prototype.</span>canOverrideGeolocation
+            <span class="apidocSignatureSpan">(params, sendResult)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webkit-devtools-agent.page.prototype.canShowDebugBorders">
+            function <span class="apidocSignatureSpan">webkit-devtools-agent.page.prototype.</span>canShowDebugBorders
+            <span class="apidocSignatureSpan">(params, sendResult)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webkit-devtools-agent.page.prototype.canShowFPSCounter">
+            function <span class="apidocSignatureSpan">webkit-devtools-agent.page.prototype.</span>canShowFPSCounter
+            <span class="apidocSignatureSpan">(params, sendResult)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webkit-devtools-agent.page.prototype.enable">
+            function <span class="apidocSignatureSpan">webkit-devtools-agent.page.prototype.</span>enable
+            <span class="apidocSignatureSpan">(params, sendResult)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webkit-devtools-agent.page.prototype.setTouchEmulationEnabled">
+            function <span class="apidocSignatureSpan">webkit-devtools-agent.page.prototype.</span>setTouchEmulationEnabled
+            <span class="apidocSignatureSpan">(params, sendResult)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.webkit-devtools-agent.translator">module webkit-devtools-agent.translator</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webkit-devtools-agent.translator.afterCompile">
+            function <span class="apidocSignatureSpan">webkit-devtools-agent.translator.</span>afterCompile
+            <span class="apidocSignatureSpan">(eventData)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webkit-devtools-agent.translator.emptyResult">
+            function <span class="apidocSignatureSpan">webkit-devtools-agent.translator.</span>emptyResult
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webkit-devtools-agent.translator.scriptCollected">
+            function <span class="apidocSignatureSpan">webkit-devtools-agent.translator.</span>scriptCollected
+            <span class="apidocSignatureSpan">(script)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webkit-devtools-agent.translator.scripts">
+            function <span class="apidocSignatureSpan">webkit-devtools-agent.translator.</span>scripts
+            <span class="apidocSignatureSpan">(response)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webkit-devtools-agent.translator.setexceptionbreak">
+            function <span class="apidocSignatureSpan">webkit-devtools-agent.translator.</span>setexceptionbreak
+            <span class="apidocSignatureSpan">(response)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.webkit-devtools-agent" id="apidoc.module.webkit-devtools-agent">module webkit-devtools-agent</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.webkit-devtools-agent.console" id="apidoc.element.webkit-devtools-agent.console">
+        function <span class="apidocSignatureSpan">webkit-devtools-agent.</span>console
+        <span class="apidocSignatureSpan">(notify, runtimeAgent)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ConsoleAgent(notify, runtimeAgent) {
+    var self = this;
+    this.notify = notify;
+    this.runtimeAgent = runtimeAgent;
+    this.enabled = false;
+    this.messages = [];
+
+    [&#x27;log&#x27;, &#x27;warn&#x27;, &#x27;info&#x27;, &#x27;error&#x27;, &#x27;dir&#x27;].forEach(function(level) {
+        var ref = console[level];
+        console[level] = function() {
+            ref.apply(this, arguments);
+
+            var message = {
+                method: &#x27;Console.messageAdded&#x27;,
+                params: {
+                    message: {
+                        text: util.format.apply(this, arguments),
+                        level: level == &#x27;warn&#x27; ? &#x27;warning&#x27; : level,
+                        source: &#x27;console-api&#x27;
+                    }
+                }
+            };
+
+            //TODO make it aware of RemoteObjects so
+            //that the console in the frontend can show us its shinny
+            //dropdown
+<span class="apidocCodeCommentSpan">            /*if (level == &#x27;dir&#x27;) {
+                message.params.message.type = level;
+            }*/
+</span>
+            //TODO save messages when this agent is disabled.
+            //self.messages.push(message);
+            notify(message);
+        };
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webkit-devtools-agent.debugger_client" id="apidoc.element.webkit-devtools-agent.debugger_client">
+        function <span class="apidocSignatureSpan">webkit-devtools-agent.</span>debugger_client
+        <span class="apidocSignatureSpan">(notify)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">debugger_client = function (notify) {
+    this.connection = null;
+    this.connected = false;
+    this.reqSequence = 0;
+    this.requests = {};
+    this.notify = notify;
+    this.queue = [];
+    this.port = 5858;
+    this.protocol = null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webkit-devtools-agent.inspector" id="apidoc.element.webkit-devtools-agent.inspector">
+        function <span class="apidocSignatureSpan">webkit-devtools-agent.</span>inspector
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function InspectorAgent() {
+    this.enabled = false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webkit-devtools-agent.page" id="apidoc.element.webkit-devtools-agent.page">
+        function <span class="apidocSignatureSpan">webkit-devtools-agent.</span>page
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function PageAgent() {
+    this.enabled = false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.webkit-devtools-agent.console" id="apidoc.module.webkit-devtools-agent.console">module webkit-devtools-agent.console</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.webkit-devtools-agent.console.console" id="apidoc.element.webkit-devtools-agent.console.console">
+        function <span class="apidocSignatureSpan">webkit-devtools-agent.</span>console
+        <span class="apidocSignatureSpan">(notify, runtimeAgent)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ConsoleAgent(notify, runtimeAgent) {
+    var self = this;
+    this.notify = notify;
+    this.runtimeAgent = runtimeAgent;
+    this.enabled = false;
+    this.messages = [];
+
+    [&#x27;log&#x27;, &#x27;warn&#x27;, &#x27;info&#x27;, &#x27;error&#x27;, &#x27;dir&#x27;].forEach(function(level) {
+        var ref = console[level];
+        console[level] = function() {
+            ref.apply(this, arguments);
+
+            var message = {
+                method: &#x27;Console.messageAdded&#x27;,
+                params: {
+                    message: {
+                        text: util.format.apply(this, arguments),
+                        level: level == &#x27;warn&#x27; ? &#x27;warning&#x27; : level,
+                        source: &#x27;console-api&#x27;
+                    }
+                }
+            };
+
+            //TODO make it aware of RemoteObjects so
+            //that the console in the frontend can show us its shinny
+            //dropdown
+<span class="apidocCodeCommentSpan">            /*if (level == &#x27;dir&#x27;) {
+                message.params.message.type = level;
+            }*/
+</span>
+            //TODO save messages when this agent is disabled.
+            //self.messages.push(message);
+            notify(message);
+        };
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.webkit-devtools-agent.console.prototype" id="apidoc.module.webkit-devtools-agent.console.prototype">module webkit-devtools-agent.console.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.webkit-devtools-agent.console.prototype.addInspectedHeapObject" id="apidoc.element.webkit-devtools-agent.console.prototype.addInspectedHeapObject">
+        function <span class="apidocSignatureSpan">webkit-devtools-agent.console.prototype.</span>addInspectedHeapObject
+        <span class="apidocSignatureSpan">(params, sendResult)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addInspectedHeapObject = function (params, sendResult) {
+    sendResult({});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webkit-devtools-agent.console.prototype.clearMessages" id="apidoc.element.webkit-devtools-agent.console.prototype.clearMessages">
+        function <span class="apidocSignatureSpan">webkit-devtools-agent.console.prototype.</span>clearMessages
+        <span class="apidocSignatureSpan">(params, sendResult)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clearMessages = function (params, sendResult) {
+    this.messages = [];
+    sendResult({});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webkit-devtools-agent.console.prototype.disable" id="apidoc.element.webkit-devtools-agent.console.prototype.disable">
+        function <span class="apidocSignatureSpan">webkit-devtools-agent.console.prototype.</span>disable
+        <span class="apidocSignatureSpan">(params, sendResult)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">disable = function (params, sendResult) {
+    this.enabled = false;
+    sendResult({});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webkit-devtools-agent.console.prototype.enable" id="apidoc.element.webkit-devtools-agent.console.prototype.enable">
+        function <span class="apidocSignatureSpan">webkit-devtools-agent.console.prototype.</span>enable
+        <span class="apidocSignatureSpan">(params, sendResult)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">enable = function (params, sendResult) {
+    for(var i = 0, len = this.messages.length; i &#x3c; len; i++) {
+        this.notify(this.messages[i]);
+    }
+    sendResult({result: this.enabled});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webkit-devtools-agent.console.prototype.setMonitoringXHREnabled" id="apidoc.element.webkit-devtools-agent.console.prototype.setMonitoringXHREnabled">
+        function <span class="apidocSignatureSpan">webkit-devtools-agent.console.prototype.</span>setMonitoringXHREnabled
+        <span class="apidocSignatureSpan">(params, sendResult)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setMonitoringXHREnabled = function (params, sendResult) {
+    sendResult({});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.webkit-devtools-agent.debugger_client" id="apidoc.module.webkit-devtools-agent.debugger_client">module webkit-devtools-agent.debugger_client</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.webkit-devtools-agent.debugger_client.debugger_client" id="apidoc.element.webkit-devtools-agent.debugger_client.debugger_client">
+        function <span class="apidocSignatureSpan">webkit-devtools-agent.</span>debugger_client
+        <span class="apidocSignatureSpan">(notify)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">debugger_client = function (notify) {
+    this.connection = null;
+    this.connected = false;
+    this.reqSequence = 0;
+    this.requests = {};
+    this.notify = notify;
+    this.queue = [];
+    this.port = 5858;
+    this.protocol = null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.webkit-devtools-agent.debugger_client.prototype" id="apidoc.module.webkit-devtools-agent.debugger_client.prototype">module webkit-devtools-agent.debugger_client.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.webkit-devtools-agent.debugger_client.prototype.connect" id="apidoc.element.webkit-devtools-agent.debugger_client.prototype.connect">
+        function <span class="apidocSignatureSpan">webkit-devtools-agent.debugger_client.prototype.</span>connect
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">connect = function (callback) {
+    this.protocol = new V8Protocol();
+    this.protocol.onResponse = this.onV8Response.bind(this);
+
+    this.connection = net.connect(this.port);
+    this.connection.setEncoding(&#x27;utf8&#x27;);
+
+    this.connection.on(&#x27;connect&#x27;, this.onConnect.bind(this));
+    this.connection.on(&#x27;data&#x27;, this.onData.bind(this));
+    this.connection.on(&#x27;close&#x27;, this.onClose.bind(this));
+    this.connection.on(&#x27;error&#x27;, this.onError.bind(this));
+
+    callback(translator.emptyResult());
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+     * @param {Function} callback Callback function
+     * @api public
+     */
+    this.connect = function(callback) {
+this.protocol = new V8Protocol();
+this.protocol.onResponse = this.onV8Response.bind(this);
+
+this.connection = net.<span class="apidocCodeKeywordSpan">connect</span>(this.port);
+this.connection.setEncoding(&#x27;utf8&#x27;);
+
+this.connection.on(&#x27;connect&#x27;, this.onConnect.bind(this));
+this.connection.on(&#x27;data&#x27;, this.onData.bind(this));
+this.connection.on(&#x27;close&#x27;, this.onClose.bind(this));
+this.connection.on(&#x27;error&#x27;, this.onError.bind(this));
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webkit-devtools-agent.debugger_client.prototype.disconnect" id="apidoc.element.webkit-devtools-agent.debugger_client.prototype.disconnect">
+        function <span class="apidocSignatureSpan">webkit-devtools-agent.debugger_client.prototype.</span>disconnect
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">disconnect = function (callback) {
+    this.connection.end();
+    callback();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webkit-devtools-agent.debugger_client.prototype.flushQueue" id="apidoc.element.webkit-devtools-agent.debugger_client.prototype.flushQueue">
+        function <span class="apidocSignatureSpan">webkit-devtools-agent.debugger_client.prototype.</span>flushQueue
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">flushQueue = function () {
+    if (!this.connected) {
+        return;
+    }
+
+    var queue = this.queue;
+    for (var i = 0, len = queue.length; i &#x3c; len; i++) {
+        var message = JSON.stringify(queue[i]);
+
+        this.connection.write(&#x27;Content-Length: &#x27; +
+            message.length + &#x27;\r\n\r\n&#x27; + message)
+
+        //removes message from the queue
+        queue.splice(i, 1);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * Callback function that gets invoked once
+ * a connection to the debuggee process is established.
+ *
+ * @api private
+ */
+this.onConnect = function() {
+    this.connected = true;
+    this.<span class="apidocCodeKeywordSpan">flushQueue</span>();
+};
+
+/**
+ * This callback function gets invoked by
+ * nodejs v8 protocol implementation
+ * once it receives the entire response
+ * from v8 debug agent.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webkit-devtools-agent.debugger_client.prototype.getScripts" id="apidoc.element.webkit-devtools-agent.debugger_client.prototype.getScripts">
+        function <span class="apidocSignatureSpan">webkit-devtools-agent.debugger_client.prototype.</span>getScripts
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getScripts = function () {
+    var self = this;
+    var request = {
+        type: &#x27;request&#x27;,
+        command: &#x27;scripts&#x27;,
+        arguments: {
+            types: 4, //normal scripts
+            includeSource: true
+        }
+    };
+
+    this.send(request, function(scripts) {
+        for (var i = 0, len = scripts.length; i &#x3c; len; i++) {
+            self.notify(scripts[i]);
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webkit-devtools-agent.debugger_client.prototype.onClose" id="apidoc.element.webkit-devtools-agent.debugger_client.prototype.onClose">
+        function <span class="apidocSignatureSpan">webkit-devtools-agent.debugger_client.prototype.</span>onClose
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onClose = function () {
+    this.connected = false;
+    this.connection = null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webkit-devtools-agent.debugger_client.prototype.onConnect" id="apidoc.element.webkit-devtools-agent.debugger_client.prototype.onConnect">
+        function <span class="apidocSignatureSpan">webkit-devtools-agent.debugger_client.prototype.</span>onConnect
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onConnect = function () {
+    this.connected = true;
+    this.flushQueue();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webkit-devtools-agent.debugger_client.prototype.onData" id="apidoc.element.webkit-devtools-agent.debugger_client.prototype.onData">
+        function <span class="apidocSignatureSpan">webkit-devtools-agent.debugger_client.prototype.</span>onData
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onData = function (data) {
+    this.protocol.execute(data);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webkit-devtools-agent.debugger_client.prototype.onError" id="apidoc.element.webkit-devtools-agent.debugger_client.prototype.onError">
+        function <span class="apidocSignatureSpan">webkit-devtools-agent.debugger_client.prototype.</span>onError
+        <span class="apidocSignatureSpan">(error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onError = function (error) {
+    console.error(error);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webkit-devtools-agent.debugger_client.prototype.onV8Response" id="apidoc.element.webkit-devtools-agent.debugger_client.prototype.onV8Response">
+        function <span class="apidocSignatureSpan">webkit-devtools-agent.debugger_client.prototype.</span>onV8Response
+        <span class="apidocSignatureSpan">(response)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onV8Response = function (response) {
+    var payload = response.body;
+    //console.log(payload);
+
+    if (payload.type == &#x27;event&#x27;) {
+        if (!translator[payload.event]) {
+            console.warn(&#x27;webkit-devtools-agent: Translator function &#x27; +
+            &#x27; not found for event: &#x27; + payload.event);
+            return;
+        }
+
+        this.notify(translator[payload.event](payload));
+    } else if (payload.type == &#x27;response&#x27;) {
+        var callback = this.requests[payload.request_seq];
+        if (callback) {
+            callback(translator[payload.command](payload));
+
+            delete this.requests[payload.request_seq];
+        } else {
+            console.warn(&#x27;webkit-devtools-agent: Unexpected &#x27;+
+            &#x27;message was received, there is no callback function &#x27;+
+            &#x27; to handle it :( :&#x27;);
+            console.warn(payload);
+        }
+    } else {
+        console.warn(&#x27;webkit-devtools-agent: Unrecognized &#x27; +
+        &#x27;message type received by DebuggerAgent: &#x27;);
+        console.warn(payload);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webkit-devtools-agent.debugger_client.prototype.send" id="apidoc.element.webkit-devtools-agent.debugger_client.prototype.send">
+        function <span class="apidocSignatureSpan">webkit-devtools-agent.debugger_client.prototype.</span>send
+        <span class="apidocSignatureSpan">(data, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">send = function (data, callback) {
+    this.reqSequence++;
+    data.seq = this.reqSequence;
+
+<span class="apidocCodeCommentSpan">    /**
+     * Once the response comes back, the
+     * `callback` function is going to be invoked and
+     * removed from the list of pending response handlers.
+     */
+</span>    this.requests[data.seq] = callback;
+
+    /**
+     * This queue avoids some race conditions,
+     * especially in the devtools front-end
+     * initialization.
+     */
+    this.queue.push(data);
+
+    //Flushes only if this.connected is true
+    this.flushQueue();
+
+    if (this.queue.length &#x3e; 50) {
+        console.warn(&#x27;webkit-devtools-agent: Debugger client &#x27; +
+        &#x27;queue is too big. It could mean that the client was unable &#x27; +
+        &#x27;to establish a connection with the v8 debug agent. &#x27; +
+        &#x27;Restart the agent and start your debugging session again.&#x27;);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    domain[method](params, function(result) {
+        var response = {
+            id: id,
+            result: result
+        };
+
+        self.socket.<span class="apidocCodeKeywordSpan">send</span>(JSON.stringify(response));
+    });
+};
+
+/**
+ * Notification function in charge of sending events
+ * to the front-end following the protocol specified
+ * at https://developers.google.com/chrome-developer-tools/docs/protocol/1.0
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webkit-devtools-agent.debugger_client.prototype.setExceptionBreak" id="apidoc.element.webkit-devtools-agent.debugger_client.prototype.setExceptionBreak">
+        function <span class="apidocSignatureSpan">webkit-devtools-agent.debugger_client.prototype.</span>setExceptionBreak
+        <span class="apidocSignatureSpan">(exceptionBreak, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setExceptionBreak = function (exceptionBreak, callback) {
+    var request = {
+        type: &#x27;request&#x27;,
+        command: &#x27;setexceptionbreak&#x27;,
+        arguments: {
+            type: exceptionBreak === &#x27;none&#x27; ? &#x27;uncaught&#x27;: exceptionBreak,
+            enabled: exceptionBreak == &#x27;none&#x27; ? false : true
+        }
+    };
+
+    this.send(request, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.webkit-devtools-agent.inspector" id="apidoc.module.webkit-devtools-agent.inspector">module webkit-devtools-agent.inspector</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.webkit-devtools-agent.inspector.inspector" id="apidoc.element.webkit-devtools-agent.inspector.inspector">
+        function <span class="apidocSignatureSpan">webkit-devtools-agent.</span>inspector
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function InspectorAgent() {
+    this.enabled = false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.webkit-devtools-agent.inspector.prototype" id="apidoc.module.webkit-devtools-agent.inspector.prototype">module webkit-devtools-agent.inspector.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.webkit-devtools-agent.inspector.prototype.enable" id="apidoc.element.webkit-devtools-agent.inspector.prototype.enable">
+        function <span class="apidocSignatureSpan">webkit-devtools-agent.inspector.prototype.</span>enable
+        <span class="apidocSignatureSpan">(params, sendResult)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">enable = function (params, sendResult) {
+    sendResult({result: this.enabled});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.webkit-devtools-agent.page" id="apidoc.module.webkit-devtools-agent.page">module webkit-devtools-agent.page</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.webkit-devtools-agent.page.page" id="apidoc.element.webkit-devtools-agent.page.page">
+        function <span class="apidocSignatureSpan">webkit-devtools-agent.</span>page
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function PageAgent() {
+    this.enabled = false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.webkit-devtools-agent.page.prototype" id="apidoc.module.webkit-devtools-agent.page.prototype">module webkit-devtools-agent.page.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.webkit-devtools-agent.page.prototype.canContinuouslyPaint" id="apidoc.element.webkit-devtools-agent.page.prototype.canContinuouslyPaint">
+        function <span class="apidocSignatureSpan">webkit-devtools-agent.page.prototype.</span>canContinuouslyPaint
+        <span class="apidocSignatureSpan">(params, sendResult)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">canContinuouslyPaint = function (params, sendResult) {
+    sendResult({result: false});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webkit-devtools-agent.page.prototype.canOverrideDeviceMetrics" id="apidoc.element.webkit-devtools-agent.page.prototype.canOverrideDeviceMetrics">
+        function <span class="apidocSignatureSpan">webkit-devtools-agent.page.prototype.</span>canOverrideDeviceMetrics
+        <span class="apidocSignatureSpan">(params, sendResult)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">canOverrideDeviceMetrics = function (params, sendResult) {
+    sendResult({result: false});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webkit-devtools-agent.page.prototype.canOverrideDeviceOrientation" id="apidoc.element.webkit-devtools-agent.page.prototype.canOverrideDeviceOrientation">
+        function <span class="apidocSignatureSpan">webkit-devtools-agent.page.prototype.</span>canOverrideDeviceOrientation
+        <span class="apidocSignatureSpan">(params, sendResult)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">canOverrideDeviceOrientation = function (params, sendResult) {
+    sendResult({result: false});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webkit-devtools-agent.page.prototype.canOverrideGeolocation" id="apidoc.element.webkit-devtools-agent.page.prototype.canOverrideGeolocation">
+        function <span class="apidocSignatureSpan">webkit-devtools-agent.page.prototype.</span>canOverrideGeolocation
+        <span class="apidocSignatureSpan">(params, sendResult)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">canOverrideGeolocation = function (params, sendResult) {
+    sendResult({result: false});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webkit-devtools-agent.page.prototype.canShowDebugBorders" id="apidoc.element.webkit-devtools-agent.page.prototype.canShowDebugBorders">
+        function <span class="apidocSignatureSpan">webkit-devtools-agent.page.prototype.</span>canShowDebugBorders
+        <span class="apidocSignatureSpan">(params, sendResult)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">canShowDebugBorders = function (params, sendResult) {
+    sendResult({result: false});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webkit-devtools-agent.page.prototype.canShowFPSCounter" id="apidoc.element.webkit-devtools-agent.page.prototype.canShowFPSCounter">
+        function <span class="apidocSignatureSpan">webkit-devtools-agent.page.prototype.</span>canShowFPSCounter
+        <span class="apidocSignatureSpan">(params, sendResult)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">canShowFPSCounter = function (params, sendResult) {
+    sendResult({result: false});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webkit-devtools-agent.page.prototype.enable" id="apidoc.element.webkit-devtools-agent.page.prototype.enable">
+        function <span class="apidocSignatureSpan">webkit-devtools-agent.page.prototype.</span>enable
+        <span class="apidocSignatureSpan">(params, sendResult)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">enable = function (params, sendResult) {
+    sendResult({result: this.enabled});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webkit-devtools-agent.page.prototype.setTouchEmulationEnabled" id="apidoc.element.webkit-devtools-agent.page.prototype.setTouchEmulationEnabled">
+        function <span class="apidocSignatureSpan">webkit-devtools-agent.page.prototype.</span>setTouchEmulationEnabled
+        <span class="apidocSignatureSpan">(params, sendResult)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setTouchEmulationEnabled = function (params, sendResult) {
+    sendResult({result: false});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.webkit-devtools-agent.translator" id="apidoc.module.webkit-devtools-agent.translator">module webkit-devtools-agent.translator</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.webkit-devtools-agent.translator.afterCompile" id="apidoc.element.webkit-devtools-agent.translator.afterCompile">
+        function <span class="apidocSignatureSpan">webkit-devtools-agent.translator.</span>afterCompile
+        <span class="apidocSignatureSpan">(eventData)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">afterCompile = function (eventData) {
+    return {
+        method: &#x27;Debugger.afterCompile&#x27;,
+        params:{}
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webkit-devtools-agent.translator.emptyResult" id="apidoc.element.webkit-devtools-agent.translator.emptyResult">
+        function <span class="apidocSignatureSpan">webkit-devtools-agent.translator.</span>emptyResult
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">emptyResult = function () {
+    var devtoolsFormat = {};
+    return devtoolsFormat;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    this.connection.setEncoding(&#x27;utf8&#x27;);
+
+    this.connection.on(&#x27;connect&#x27;, this.onConnect.bind(this));
+    this.connection.on(&#x27;data&#x27;, this.onData.bind(this));
+    this.connection.on(&#x27;close&#x27;, this.onClose.bind(this));
+    this.connection.on(&#x27;error&#x27;, this.onError.bind(this));
+
+    callback(translator.<span class="apidocCodeKeywordSpan">emptyResult</span>());
+};
+
+/**
+ * Disconnects from the debuggee process
+ *
+ * @param {Function} callback Callback function
+ * @api public
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webkit-devtools-agent.translator.scriptCollected" id="apidoc.element.webkit-devtools-agent.translator.scriptCollected">
+        function <span class="apidocSignatureSpan">webkit-devtools-agent.translator.</span>scriptCollected
+        <span class="apidocSignatureSpan">(script)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">scriptCollected = function (script) {
+    console.log(script);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webkit-devtools-agent.translator.scripts" id="apidoc.element.webkit-devtools-agent.translator.scripts">
+        function <span class="apidocSignatureSpan">webkit-devtools-agent.translator.</span>scripts
+        <span class="apidocSignatureSpan">(response)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">scripts = function (response) {
+    var scripts = [];
+    var scripts_ = response.body;
+
+    for (var i = 0, len = scripts_.length; i &#x3c; len; i++) {
+        var script = scripts_[i];
+
+        scripts.push({
+            method: &#x27;Debugger.scriptParsed&#x27;,
+            params: formatScript(script)
+        });
+    }
+
+    return scripts;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webkit-devtools-agent.translator.setexceptionbreak" id="apidoc.element.webkit-devtools-agent.translator.setexceptionbreak">
+        function <span class="apidocSignatureSpan">webkit-devtools-agent.translator.</span>setexceptionbreak
+        <span class="apidocSignatureSpan">(response)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setexceptionbreak = function (response) {
+    return {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
